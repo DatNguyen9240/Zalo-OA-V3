@@ -19,7 +19,12 @@
       }
     },
     {
-      "parameters": {},
+      "parameters": {
+        "events": [
+          "message"
+        ],
+        "includeSelfEvents": false
+      },
       "type": "n8n-nodes-zalo-user-v3.zaloUser",
       "typeVersion": 2,
       "position": [
@@ -37,7 +42,7 @@
     },
     {
       "parameters": {
-        "threadId": "={{ $json.data.uidFrom }}",
+        "threadId": "={{ $('Zalo User Trigger').item.json.threadId }}",
         "message": "=Cảm ơn bạn rất nhiều. Có phải nội dung bạn gửi là {{ $json.data.content }}"
       },
       "type": "n8n-nodes-zalo-user-v3.zaloUserInteract",
